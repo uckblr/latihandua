@@ -1,0 +1,346 @@
+/* Variable */
+:root {
+  --blue: hsl(245, 75%, 52%);
+  --body: hsl(225, 100%, 94%);
+  --text: hsl(225, 100%, 98%);
+  --even: hsl(224, 23%, 55%);
+  --dark: hsl(223, 47%, 23%);
+}
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Avenir Next", "Avenir", sans-serif;
+  background-color: var(--body);
+}
+/* Navbar */
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100vw;
+  height: 3vh;
+  background-color: var(--blue);
+  box-shadow: 1px 5px 5px var(--even);
+  position: fixed;
+  margin-top: -75px;
+  z-index: 9999;
+}
+.judul {
+  margin-left: 50px;
+}
+.judul a {
+  text-decoration: none;
+  color: var(--text);
+}
+#menuToggle {
+  display: block;
+  position: relative;
+  top: 3px;
+  z-index: 1;
+  -webkit-user-select: none;
+  user-select: none;
+}
+#menuToggle a {
+  text-decoration: none;
+  color: var(--text);
+  transition: color 0.3s ease;
+}
+#menuToggle a:hover {
+  color: var(--even);
+}
+#menuToggle input {
+  display: none;
+  width: 40px;
+  height: 32px;
+  position: absolute;
+  top: -7px;
+  left: -5px;
+  cursor: pointer;
+  opacity: 0;
+  z-index: 2;
+  -webkit-touch-callout: none;
+}
+#menuToggle span {
+  display: none;
+  width: 33px;
+  height: 4px;
+  margin-bottom: 5px;
+  position: relative;
+  background: var(--text);
+  border-radius: 3px;
+  z-index: 1;
+  transform-origin: 4px 0px;
+  transition: transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1),
+  background 0.5s cubic-bezier(0.77, 0.2, 0.05, 1), opacity 0.55s ease;
+}
+#menuToggle span:first-child {
+  transform-origin: 0% 0%;
+}
+#menuToggle span:nth-last-child(2) {
+  transform-origin: 0% 100%;
+}
+#menuToggle input:checked ~ span {
+  opacity: 1;
+  transform: rotate(45deg) translate(-2px, -1px);
+  background: var(--even);
+}
+#menuToggle input:checked ~ span:nth-last-child(3) {
+  opacity: 0;
+  transform: rotate(0deg) scale(0.2, 0.2);
+}
+#menuToggle input:checked ~ span:nth-last-child(2) {
+  transform: rotate(-45deg) translate(0, -1px);
+}
+#menu {
+  margin-right: 50px;
+}
+#menu li {
+  display: inline;
+  margin-left: 45px;
+}
+/* Container */
+.container {
+  margin: auto;
+  box-shadow: 1px 1px 5px var(--even);
+  border-radius: 25px;
+  background-color: var(--text);
+  width: 90vw;
+  margin-top: 70px;
+  margin-bottom: 100px;
+  padding-top: 5px;
+  padding-bottom: 10px;
+}
+/* Jadwal */
+.jadwal {
+  width: 80vw;
+  margin: auto;
+}
+.container .jadwal h2 {
+  text-align: center;
+  color: var(--blue);
+}
+.container .jadwal p {
+  text-align: right;
+}
+.container .jadwal a {
+  text-decoration: none;
+  color: var(--text);
+}
+.container .jadwal #doi {
+  color: var(--dark);
+}
+/* Table */
+table {
+  box-shadow: 5px 5px 10px var(--even);
+  border-collapse: collapse;
+  background-color: var(--body);
+  width: 80vw;
+  margin: 5px auto;
+  text-align: center;
+}
+table th {
+  background-color: var(--blue);
+  color: var(--text);
+}
+table, th, td {
+  border: 1px solid var(--blue);
+}
+table tr:nth-child(even) {
+  background-color: var(--even);
+  color: var(--text);
+}
+/* daftar dan rute */
+.container .cbu .tentang-cbu, .container .doi .tentang-doi {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin: auto;
+  width: 80vw;
+}
+.container .tentang-cbu section h2, .container .tentang-cbu section a, .container .tentang-doi section h2, .container .tentang-doi section a {
+  color: var(--blue);
+}
+.container .tentang-cbu section p, .container .tentang-doi section p {
+  margin-top: -20px;
+}
+.container .tentang-cbu section a, .container .tentang-doi section a {
+  background-color: var(--blue);
+  color: var(--text);
+  font-size: 0.8em;
+  padding: 5px;
+  border-radius: 30px;
+  text-decoration: none;
+}
+/* Kontak dan info */
+.container .kontak-info {
+  width: 80vw;
+  display: flex;
+  justify-content: space-around;
+  margin: 40px auto;
+  background-color: var(--body);
+  box-shadow: 1px 5px 10px var(--even);
+  border-radius: 6px;
+  padding-bottom: 10px;
+}
+.container .kontak-info #info {
+  width: 40vw;
+}
+.container .kontak-info #kontak {
+  margin-top: 15px;
+}
+.container .kontak-info #info h3, .container .kontak-info #kontak label {
+  color: var(--blue);
+}
+.container .kontak-info #kontak input[type=text] {
+  color: var(--dark);
+  width: 20vw;
+  margin-bottom: 10px;
+  border-radius: 5px;
+  border: 1px solid var(--even);
+}
+.container .kontak-info #kontak input[type=text]:focus {
+  background-color: var(--even);
+  color: var(--text);
+  border: 2px solid var(--blue);
+}
+.container .kontak-info #kontak textarea {
+  border-radius: 5px;
+  border: 1px solid var(--even);
+}
+.container .kontak-info #kontak textarea:focus {
+  border: 2px solid var(--blue);
+  background-color: var(--even);
+  color: var(--text);
+}
+.container .kontak-info #kontak button {
+  border: 1px solid var(--dark);
+  border-radius: 5px;
+  margin-left: 200px;
+  background-color: var(--blue);
+  color: var(--text);
+}
+.container .kontak-info #kontak button:hover {
+  background-color: var(--even);
+}
+
+.cbu .drop, .doi .drop {
+  position: relative;
+  display: inline-block;
+}
+.cbu .drop .btn, .doi .drop .btn {
+  margin-left: 250px;
+  display: none;
+  background-color: var(--blue);
+  color: var(--text);
+  font-size: 0.8em;
+  padding: 5px;
+  border: 1px solid var(--text);
+  border-radius: 30px;
+}
+.cbu .drop .isi, .doi .drop .isi {
+  margin-left: 50px;
+  display: block;
+  position: relative;
+  z-index: 1;
+}
+.cbu .drop:hover .isi {
+  display: block;
+}
+.doi .drop:hover .isi {
+  display: block;
+}
+/* footer */
+footer {
+  text-align: center;
+  margin-top: 20px;
+  width: 100vw;
+  height: 5vh;
+  background-color: var(--dark);
+  color: var(--text);
+}
+footer a {
+  text-decoration: none;
+  color: var(--text);
+}
+
+/* Breakpoint */
+@media (max-width: 576px) {
+  nav {
+    height: 10vh;
+  }
+  .judul {
+    margin-left: 10px;
+    z-index: 2;
+  }
+  .judul h1 {
+    font-size: 1.35em;
+  }
+  img {
+    width: 90vw;
+  }
+  #menuToggle {
+    margin-right: 10px;
+  }
+  #menuToggle input, #menuToggle span {
+    display: block;
+  }
+  #menu {
+    position: absolute;
+    width: 75vw;
+    margin: -100px 0 0 -320px;
+    padding: 50px;
+    padding-top: 125px;
+    background: #2144f9;
+    list-style-type: none;
+    -webkit-font-smoothing: antialiased;
+    transform-origin: 0% 0%;
+    transform: translate(-160%, 0);
+    transition: transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1);
+  }
+  #menu li {
+    display: block;
+    padding: 10px 0;
+    font-size: 22px;
+    margin-left: 0;
+  }
+  #menuToggle input:checked ~ ul {
+    transform: none;
+  }
+  .container .jadwal p {
+    font-size: 0.6em;
+  }
+  .container .tentang-cbu, .container .tentang-doi, .container .kontak-info {
+    flex-wrap: wrap;
+  }
+  .container .tentang-doi section p, .container .tentang-doi img {
+    width: 80vw;
+    margin-right: 40px;
+}
+  .container .tentang-doi {
+    flex-direction: column-reverse;
+  }
+  .container .kontak-info #info, .container .kontak-info #kontak {
+    width: 90vw;
+  }
+  .container .kontak-info #kontak {
+    margin-left: 15px;
+  }
+  .container .kontak-info #kontak input[type=text], .container .kontak-info #kontak textarea {
+    width: 70vw;
+  }
+  .container .kontak-info #kontak button {
+    margin-left: 185px;
+    width: 20vw;
+    height: 5vh;
+  }
+  .cbu .drop .btn, .doi .drop .btn {
+  display: block;
+}
+.cbu .drop .isi, .doi .drop .isi {
+  margin-left: 20px;
+  display: none;
+}
+footer {
+height: 10vh;
+}
+}
