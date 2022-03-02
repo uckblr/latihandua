@@ -10,7 +10,7 @@ body {
   margin: 0;
   padding: 0;
   font-family: "Avenir Next", "Avenir", sans-serif;
-  background-color: blue;
+  background-color: var(--body);
 }
 /* Navbar */
 nav {
@@ -18,7 +18,7 @@ nav {
   justify-content: space-between;
   align-items: center;
   width: 100vw;
-  height: 8vh;
+  height: 10vh;
   background-color: var(--blue);
   box-shadow: 1px 5px 5px var(--even);
   position: fixed;
